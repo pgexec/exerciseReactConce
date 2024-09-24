@@ -1,0 +1,80 @@
+.FormCarro{
+    display: flex;
+    background-color: #f1f1f1;
+    flex-direction: column;
+    padding: 40px;
+    border-radius: 15px;
+    gap: 10px;
+    width: 100%;
+}
+
+.inputs{
+    border-radius: 5px;
+    background-color: rgb(136, 134, 134);
+}
+
+.divInputs{
+    display: flex;
+    background-color: rgb(212, 212, 212);
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+.picture
+{
+    width: 300px;
+    height: 200px;
+    background-color: rgb(247, 240, 232);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    border: 2px dashed;
+    cursor: pointer;
+    font-family: sans-serif;
+}
+
+.buttonImg{
+    background-color: blueviolet;
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+li{
+    list-style-type: none;
+    background-color: black;
+    color: whitesmoke;
+    width: 20%;
+    padding: 10px;
+    border-radius: 10px;
+}
+li:hover{
+    transition: all 500ms;
+    list-style-type: none;
+    background-color: white;
+    color: black;
+    width: 20%;
+    padding: 10px;
+    border-radius: 10px;
+    border: black solid 1px;
+    cursor: pointer;
+}
+
+.divListagens{
+    display: flex;
+    width: 100%;
+    height: auto;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.divForm{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}

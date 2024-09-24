@@ -1,0 +1,40 @@
+.divCompra{
+    background-color: rgb(205, 212, 212);
+    height: 50%;
+    width: 50%;
+    padding: 30px;
+    border-radius: 10px;
+    position: absolute;
+    top: 20%;
+    bottom: 0%; 
+    left: 15%;
+    right: 10%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 0px;
+    font-size: 12px;
+    border: #8888889a solid 1px;
+}
+
+input{
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+.divBotaoFechar{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    color: black;
+}
+
+
+.BotaoFechar{
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+}

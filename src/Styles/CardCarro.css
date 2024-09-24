@@ -1,0 +1,159 @@
+
+.divMainCardCarro{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 0;
+}
+
+
+.cardDiv{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #cccccc6b;
+    width: 300px;
+    height: auto;
+    padding: 10px;
+    gap: 20px;
+    padding: 20px;
+    font-weight: 700;
+    border-radius: 15px;
+    -webkit-box-shadow: 10px 11px 5px -6px rgba(135,121,135,0.19);
+    -moz-box-shadow: 10px 11px 5px -6px rgba(135,121,135,0.19);
+    box-shadow: 10px 11px 5px -6px rgba(135,121,135,0.19);
+    z-index: 0;
+    border-radius: 15px;
+}
+
+
+.divCardBlur{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    font-weight: 700;
+    width: 300px;
+    height: auto;
+    padding: 20px;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #cccccc6b;
+    -webkit-box-shadow: 10px 11px 5px -6px rgba(135,121,135,0.19);
+    -moz-box-shadow: 10px 11px 5px -6px rgba(135,121,135,0.19);
+    box-shadow: 10px 11px 5px -6px rgba(135,121,135,0.19);
+    filter: blur(2px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.divInfo{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 5px;
+}
+
+.picture
+{
+    width: 311px;
+    height: 413px;
+    background-color: rgb(247, 240, 232);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    border: 2px dashed;
+    cursor: pointer;
+    font-family: sans-serif;
+}
+
+.picture-input{
+    display: none;
+}
+
+.picture:hover{
+    color: #777;
+    background-color: #ccc;
+    transition: color 300ms ease-in-out, background  300ms ease-in-out;
+}
+
+.picture:active{
+    color: #615b5b;
+    background-color: aliceblue;
+}
+
+
+.spanImage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 311px;
+    height: 413px;
+    object-fit: cover;
+}
+
+.picture-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.divImage{
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-self: center;
+    width: 100%;
+    background-color: #615b5b;
+    border-radius: 15px;
+}
+
+.divImage img{
+   width: 100%;
+   height: 350px;
+}
+
+
+.divConfirmedExcluir{
+    color: black;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-self: center;
+    text-align: center;
+    gap: 20px;
+}
+
+
+
+
+.buttonFechar{
+    width:30%;
+}
+
+.ConteinerViewCards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.divCompra{
+    z-index: 99;
+}
+
+
+

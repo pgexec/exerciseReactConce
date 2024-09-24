@@ -58,28 +58,31 @@ function FormInputs({createCarro}){
                 />
                 {imageSrc != null ? <img src={imageSrc} alt="" className="picture-img" /> : "Selecione uma foto"}
             </label>
-            
-            <div className="divInputs">
-                <label htmlFor="">Marca:</label>
-                <input type="text" className="inputs" onChange={handleMarca} />
-            </div>
+            <div className="divMainInputs">
+                <div className="divInputs">
+                    <label htmlFor="">Marca:</label>
+                    <input type="text" className="inputs" onChange={handleMarca} />
+                </div>
 
-            <div className="divInputs">
-                <label htmlFor="">Modelo:</label>
-                <input type="text" className="inputs" onChange={handleModelo}/>
-            </div>
-            
-            <div className="divInputs">
-                <label htmlFor="">Ano:</label>
-                <input type="" className="inputs" onChange={handleAno}/>
-            </div>
+                <div className="divInputs">
+                    <label htmlFor="">Modelo:</label>
+                    <input type="text" className="inputs" onChange={handleModelo}/>
+                </div>
+                
+                <div className="divInputs">
+                    <label htmlFor="">Ano:</label>
+                    <input type="" className="inputs" onChange={handleAno}/>
+                </div>
 
-            <div className="divInputs">
-                <label htmlFor="">Cor</label>
-                <input type="text" className="inputs" onChange={handleCor} />
-            </div> 
+                <div className="divInputs">
+                    <label htmlFor="">Cor</label>
+                    <input type="text" className="inputs" onChange={handleCor} />
+                </div>
+                <button onClick={() => createCarro(marca,modelo,ano,cor,imageSrc)}>Registrar</button>
+            </div>
+             
             
-            <button onClick={() => createCarro(marca,modelo,ano,cor,imageSrc)}>Registrar</button>
+            
         </div>   
     )
 }

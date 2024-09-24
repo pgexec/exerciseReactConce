@@ -1,29 +1,61 @@
+import { useState } from 'react';
 import '../Styles/Compra.css'
 import PropTypes from 'prop-types';
 
-function Compra({setComprou})
+function Compra({carros,id,setComprou,addCarro})
 {
+    
+    const [Nome,SetNome] = useState("");
+    const [Cpf,SetCpf] = useState("");
+
+    const handleOnchangeNome  = (e) =>{
+        SetNome(e.target.value)    
+    }
+
+    const handleOnchangeCpf = (e) =>{
+        SetCpf(e.target.value)
+    }
+
+    const createCarroVendido = () =>{
+
+        const carroAchado = carros.find(carro => carro.id == id)
+        if(carroAchado)
+        {
+            carroAchado.cpf = Cpf;
+            carroAchado.nome = Nome;
+            carroAchado.vendido = true;
+            console.log(carroAchado);
+            addCarro(carroAchado);
+            setComprou(false);
+        }else{
+            prompt("não foi achado o carro")
+        }
+    }
+
     return(
         <div className="divCompra">
             <div className='divBotaoFechar' >
-                <a className='BotaoFechar' href="" onClick={()=> setComprou(false)}>X</a>
+                <button className='BotaoFechar' href="" onClick={()=> setComprou(false)}>fechar</button>
             </div>
             <p>Confirmação de Compra</p>
             <div >
                 <label htmlFor="">Nome:</label>
-                <input type="text" />
+                <input type="text"  onChange={handleOnchangeNome}/>
             </div>
             <div>
                 <label htmlFor="">CPF:</label>
-                <input type="text" />
+                <input type="text" onChange={handleOnchangeCpf}/>
             </div>
-            <div><button>Confirmar</button></div>
+            <div><button onClick={createCarroVendido} >Confirmar</button></div>
         </div>
     )
 }
 
 Compra.propTypes ={
-    setComprou: PropTypes.func.isRequired
+    setComprou: PropTypes.func.isRequired,
+    carros:PropTypes.array.isRequired,
+    addCarro:PropTypes.func.isRequired,
+    id:PropTypes.string.isRequired
 }
 
 export default Compra;

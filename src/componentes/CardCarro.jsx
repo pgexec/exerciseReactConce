@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import '../Styles/CardCarro.css'
 import { useState } from 'react';
 import Compra from '../componentes/Compra'
+import Especificacoes from './Especificacoes';
 
-function CardCarro({id,marca,modelo,cor,ano, imgSrc, excluirCarro}){
+function CardCarro({carros,id,marca,modelo,cor,ano,imgSrc,excluirCarro, addCarro}){
 
     const [apagar,setApagar] = useState(false);
     const [Comprou,setComprou] = useState(false);
@@ -22,35 +23,12 @@ function CardCarro({id,marca,modelo,cor,ano, imgSrc, excluirCarro}){
                  <div className='divImage'>
                         {imgSrc != null && imgSrc != "" ? <img src={imgSrc} alt="" /> : "Não tem imagem" }
                 </div>
-
-                <div>
-                   
-                    <div className='divInfo'>
-                        <label htmlFor="">Marca:</label>
-                        <p>{marca}</p>
-                    </div>
-
-                    <div className='divInfo' >
-                        <label htmlFor="">Modelo:</label>
-                        <p>{modelo}</p>
-                    </div>
-
-                    <div className='divInfo' >
-                        <label htmlFor="">Cor:</label>
-                        <p>{cor}</p>
-                    </div>
-
-                    <div className='divInfo'  >
-                        <label htmlFor="">Ano:</label>
-                        <p>{ano}</p>
-                </div>
-                </div>
-                
+                <Especificacoes marca={marca} modelo={modelo} cor={cor} ano={ano}/>
                 <button onClick={() => setComprou(true)}>Comprar</button>
             </div> 
 
             <div>
-                {Comprou && <Compra setComprou={setComprou}/> }
+                {Comprou && <Compra carros={carros} addCarro={addCarro} id={id} setComprou={setComprou}/>}
             </div>   
         </div>        
 
@@ -65,7 +43,9 @@ CardCarro.propTypes = {
     ano: PropTypes.string.isRequired,
     imgSrc: PropTypes.string.isRequired,
     id:PropTypes.string.isRequired,
-    excluirCarro: PropTypes.func.isRequired
+    excluirCarro: PropTypes.func.isRequired,
+    carros:PropTypes.array.isRequired,
+    addCarro:PropTypes.func.isRequired
 }
 
 

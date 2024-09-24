@@ -1,8 +1,8 @@
 .divCompra{
     background-color: rgb(205, 212, 212);
-    height: 50%;
+    max-height: 200px;
     width: 50%;
-    padding: 30px;
+    padding: 40px;
     border-radius: 10px;
     position: absolute;
     top: 20%;
@@ -23,6 +23,7 @@
 input{
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
+    color: #212121;
 }
 
 .divBotaoFechar{
@@ -34,7 +35,7 @@ input{
 
 
 .BotaoFechar{
-    color: black;
+    color:white;
     text-decoration: none;
     font-weight: 600;
 }

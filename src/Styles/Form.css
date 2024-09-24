@@ -1,10 +1,9 @@
 .FormCarro{
     display: flex;
     background-color: #f1f1f1;
-    flex-direction: column;
     padding: 40px;
     border-radius: 15px;
-    gap: 10px;
+    gap: 20px;
     width: 100%;
 }
 
@@ -15,10 +14,18 @@
 
 .divInputs{
     display: flex;
-    background-color: rgb(212, 212, 212);
-    gap: 20px;
+    gap: 10px;
     justify-content: flex-start;
 }
+
+.divMainInputs{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .picture
 {

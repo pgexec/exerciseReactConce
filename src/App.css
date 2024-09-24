@@ -1,5 +1,6 @@
 #root {
   height: auto;
+  width: auto;
   padding: 2rem;
   text-align: center;
   display: flex;

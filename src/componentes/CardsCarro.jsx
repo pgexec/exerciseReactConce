@@ -3,14 +3,14 @@ import CardCarro from "./CardCarro";
 import PropTypes from 'prop-types';
 
 
-function CardsCarro({carros, excluirCarro})
+function CardsCarro({carros, excluirCarro,addCarro})
 {
 
     return(
         <div className="ConteinerViewCards" >
            {carros && carros.length > 0 ? (carros.map((carro,index) => (
 
-                <CardCarro key={index} id={carro.id} marca={carro.marca} modelo={carro.modelo} cor={carro.cor} ano={carro.ano} imgSrc={carro.img} excluirCarro={excluirCarro}></CardCarro>
+                <CardCarro addCarro={addCarro} carros={carros} key={index} id={carro.id} marca={carro.marca} modelo={carro.modelo} cor={carro.cor} ano={carro.ano} imgSrc={carro.img} excluirCarro={excluirCarro}></CardCarro>
            )
            )) : "não tem carros Registrado"}
         </div>
@@ -26,7 +26,8 @@ CardsCarro.propTypes = {
             ano:PropTypes.string.isRequired
         })
     ),
-    excluirCarro: PropTypes.func.isRequired
+    excluirCarro: PropTypes.func.isRequired,
+    addCarro:PropTypes.func.isRequired
 }
 
 export default CardsCarro;

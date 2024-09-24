@@ -11,7 +11,7 @@ function Form({addCarro}){
     const [Registrar,SetRegistrar] = useState(false)
 
     const createCarro = (marca,modelo,ano,cor,imageSrc) =>{
-        const carroNovo = {id:uuidv4(), img:imageSrc,marca:marca,modelo:modelo,ano:ano,cor:cor}
+        const carroNovo = {id:uuidv4(), img:imageSrc,marca:marca,modelo:modelo,ano:ano,cor:cor,cpf:null,nome:null,vendido:false}
         console.log(carroNovo)
         addCarro(carroNovo)
     }

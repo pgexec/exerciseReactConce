@@ -40,7 +40,7 @@ function App(){
         <h2>Seu novo carro não é apenas um veículo. É uma experiência.</h2>
       </div>
       <Form addCarro={addCarro}></Form>
-      <CardsCarro carros={carros} excluirCarro ={excluirCarro} ></CardsCarro>
+      <CardsCarro carros={carros} excluirCarro ={excluirCarro} addCarro={addCarro} ></CardsCarro>
     </div>
   )
 }

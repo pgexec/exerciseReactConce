@@ -16,26 +16,13 @@ function Form({addCarro}){
         addCarro(carroNovo)
     }
 
-    const listagens = [{
-        nome: "À Vendas"
-    },
-    {
-        nome:"Vendidos"
-    }]
-
     return(
         <div className='divForm'>
-            <div className='divListagens'>
-                {listagens.map((listagem,index) =>
-                (
-                    <li key={index}>{listagem.nome}</li>
-                ))}
-            </div>
-                {Registrar  ? (<FormInputs createCarro={createCarro}></FormInputs>) :
-                (<div>
-                    <h3>Se deseja Registrar um carro clique no botão abaixo:</h3>
-                    <button onClick={() =>SetRegistrar(true)} >Registrar</button>
-                </div>)}  
+            {Registrar  ? (<FormInputs createCarro={createCarro}></FormInputs>) :
+            (<div>
+                <h3>Se deseja Registrar um carro clique no botão abaixo:</h3>
+                <button onClick={() =>SetRegistrar(true)} >Registrar</button>
+            </div>)}  
         </div>
     )
 }

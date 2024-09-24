@@ -5,7 +5,7 @@ import { useState } from 'react';
 import Compra from '../componentes/Compra'
 import Especificacoes from './Especificacoes';
 
-function CardCarro({carros,id,marca,modelo,cor,ano,imgSrc,excluirCarro, addCarro}){
+function CardCarro({carros,id,marca,modelo,cor,ano,imgSrc,excluirCarro, addCarro,dono,cpf}){
 
     const [apagar,setApagar] = useState(false);
     const [Comprou,setComprou] = useState(false);
@@ -23,12 +23,12 @@ function CardCarro({carros,id,marca,modelo,cor,ano,imgSrc,excluirCarro, addCarro
                  <div className='divImage'>
                         {imgSrc != null && imgSrc != "" ? <img src={imgSrc} alt="" /> : "Não tem imagem" }
                 </div>
-                <Especificacoes marca={marca} modelo={modelo} cor={cor} ano={ano}/>
+                <Especificacoes marca={marca} modelo={modelo} cor={cor} ano={ano} dono={dono} cpf={cpf} />
                 <button onClick={() => setComprou(true)}>Comprar</button>
             </div> 
 
             <div>
-                {Comprou && <Compra carros={carros} addCarro={addCarro} id={id} setComprou={setComprou}/>}
+                {Comprou && <Compra excluirCarro={excluirCarro} carros={carros} addCarro={addCarro} id={id} setComprou={setComprou}/>}
             </div>   
         </div>        
 
@@ -45,7 +45,9 @@ CardCarro.propTypes = {
     id:PropTypes.string.isRequired,
     excluirCarro: PropTypes.func.isRequired,
     carros:PropTypes.array.isRequired,
-    addCarro:PropTypes.func.isRequired
+    addCarro:PropTypes.func.isRequired,
+    dono:PropTypes.string.isRequired,
+    cpf:PropTypes.string.isRequired
 }
 
 

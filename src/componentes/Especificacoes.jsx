@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import '../Styles/Especificacoes.css'
 
-function Especificacoes({marca,modelo,cor,ano})
+function Especificacoes({marca,modelo,cor,ano,dono,cpf})
 {
     return(
         <div className='divMainEsp'>
@@ -18,6 +18,13 @@ function Especificacoes({marca,modelo,cor,ano})
                 <label htmlFor="">Ano:</label>
                 <p>{ano}</p>
             </div>
+            {(dono != "" && cpf != "") && (dono != null && cpf != null) ? 
+            <div className='divInfo'>
+                <label htmlFor="">Dono:</label>
+                <p>{dono}</p>
+                <label htmlFor="">CPF:</label>
+                <p>{cpf}</p>
+            </div> : null}
 
             <div className='divInfo'  >
                 
@@ -30,6 +37,9 @@ Especificacoes.propTypes = {
     marca: PropTypes.string.isRequired,
     modelo:PropTypes.string.isRequired,
     cor:PropTypes.string.isRequired,
-    ano:PropTypes.string.isRequired
+    ano:PropTypes.string.isRequired,
+    dono:PropTypes.string.isRequired,
+    cpf:PropTypes.string.isRequired,
+    Comprou:PropTypes.bool.isRequired
 }
 export default Especificacoes;

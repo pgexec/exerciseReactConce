@@ -25,10 +25,6 @@ function Especificacoes({marca,modelo,cor,ano,dono,cpf})
                 <label htmlFor="">CPF:</label>
                 <p>{cpf}</p>
             </div> : null}
-
-            <div className='divInfo'  >
-                
-            </div>
         </div>
     )
 }

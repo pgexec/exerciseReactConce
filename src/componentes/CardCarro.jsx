@@ -24,7 +24,8 @@ function CardCarro({carros,id,marca,modelo,cor,ano,imgSrc,excluirCarro, addCarro
                         {imgSrc != null && imgSrc != "" ? <img src={imgSrc} alt="" /> : "Não tem imagem" }
                 </div>
                 <Especificacoes marca={marca} modelo={modelo} cor={cor} ano={ano} dono={dono} cpf={cpf} />
-                <button onClick={() => setComprou(true)}>Comprar</button>
+                {cpf != null && dono != null ? null : <button onClick={() => setComprou(true)}>Comprar</button> }
+                
             </div> 
 
             <div>

@@ -1,14 +1,12 @@
 import { useState } from 'react';
 import '../Styles/Compra.css'
 import PropTypes from 'prop-types';
-import { v4 as uuidv4 } from 'uuid';
 
-function Compra({carros,id,setComprou,addCarro, excluirCarro})
+function Compra({carros,id,setComprou,setCarros})
 {
     
     const [Nome,SetNome] = useState("");
     const [Cpf,SetCpf] = useState("");
-    const [vendido, setVendido] = useState(false)
     const handleOnchangeNome  = (e) =>{
         SetNome(e.target.value)    
     }
@@ -20,25 +18,23 @@ function Compra({carros,id,setComprou,addCarro, excluirCarro})
 
     const createCarroVendido = () =>{
 
-        const carroAchado = carros.find(carro => carro.id == id)
-        console.log("Objeto ACHADO")
-        console.log(carroAchado)
-        if(carroAchado)
-        {
-            const carroNovo = {
-                ...carroAchado,
-                id:uuidv4(),
-                cpf:Cpf,
-                nome:Nome,
-                vendido:true
+        const index = carros.findIndex(carro => carro.id === id);
+
+        if (index !== -1) {
+            const carroAtualizado = {
+                ...carros[index],
+                cpf: Cpf,        
+                nome: Nome,     
+                vendido: true  
             };
-            excluirCarro(id)
-            console.log("id que era para ser achado" + id)
-            addCarro(carroNovo); 
-            console.log("id do carro novo" + carroNovo.id)
-            setComprou(false); 
-        }else{
-            prompt("não foi achado o carro")
+            const carrosAtualizados = [...carros];
+            carrosAtualizados[index] = carroAtualizado;
+            setCarros(carrosAtualizados); 
+    
+            // Fechar o modal de compra
+            setComprou(false);
+        } else {
+            alert("Carro não encontrado");
         }
     }
 
@@ -59,7 +55,7 @@ function Compra({carros,id,setComprou,addCarro, excluirCarro})
                 <label htmlFor="">CPF:</label>
                 <input type="text" onChange={handleOnchangeCpf}/>
             </div>
-            <div>z
+            <div>
                  <button onClick={createCarroVendido}>Comprar</button>
             </div>
         </div>
@@ -69,7 +65,7 @@ function Compra({carros,id,setComprou,addCarro, excluirCarro})
 Compra.propTypes ={
     setComprou: PropTypes.func.isRequired,
     carros:PropTypes.array.isRequired,
-    addCarro:PropTypes.func.isRequired,
+    setCarros:PropTypes.func.isRequired,
     id:PropTypes.string.isRequired,
     excluirCarro:PropTypes.func.isRequired
 }

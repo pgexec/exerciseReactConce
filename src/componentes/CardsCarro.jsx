@@ -4,7 +4,7 @@ import CardCarro from "./CardCarro";
 import PropTypes from 'prop-types';
 
 
-function CardsCarro({carros, excluirCarro,addCarro})
+function CardsCarro({carros, excluirCarro,setCarros})
 {
     const listagens = [
     {
@@ -33,26 +33,24 @@ function CardsCarro({carros, excluirCarro,addCarro})
                 ))}  
             </div>
             
-            {carros && carros.length > 0 ? (
-            carros.filter(carro => carro.vendido === listChoose).map(carro => (
-                    <CardCarro 
-                        addCarro={addCarro}
-                        cpf={carro.cpf}
-                        dono={carro.nome}
-                        carros={carros}
-                        key={carro.id} 
-                        id={carro.id}
-                        marca={carro.marca}
-                        modelo={carro.modelo}
-                        cor={carro.cor}
-                        ano={carro.ano}
-                        imgSrc={carro.img}
-                        excluirCarro={excluirCarro}
-                    />
-                ))
-        ) : (<p>Não há carros registrados</p>)}  
+            {carros && carros.length > 0 ? (carros.filter(carro => carro.vendido === listChoose).map(carro => (
+            <CardCarro 
+                key={carro.id}
+                id={carro.id}
+                marca={carro.marca}
+                modelo={carro.modelo}
+                cor={carro.cor}
+                ano={carro.ano}
+                imgSrc={carro.img}
+                cpf={carro.cpf}
+                dono={carro.nome}
+                carros={carros}
+                excluirCarro={excluirCarro}
+                setCarros={setCarros}
+            />))) : "Não há carro Registrado"
+            }
         </div>
-    )
+            )
 }
 
 CardsCarro.propTypes = {
@@ -68,7 +66,7 @@ CardsCarro.propTypes = {
         })
     ),
     excluirCarro: PropTypes.func.isRequired,
-    addCarro: PropTypes.func.isRequired
+    setCarros: PropTypes.func.isRequired
 };
 
 export default CardsCarro;

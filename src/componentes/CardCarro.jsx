@@ -5,7 +5,7 @@ import { useState } from 'react';
 import Compra from '../componentes/Compra'
 import Especificacoes from './Especificacoes';
 
-function CardCarro({carros,id,marca,modelo,cor,ano,imgSrc,excluirCarro, addCarro,dono,cpf}){
+function CardCarro({carros,id,marca,modelo,cor,ano,imgSrc,excluirCarro,dono,cpf,setCarros}){
 
     const [apagar,setApagar] = useState(false);
     const [Comprou,setComprou] = useState(false);
@@ -31,9 +31,9 @@ function CardCarro({carros,id,marca,modelo,cor,ano,imgSrc,excluirCarro, addCarro
             <div>
                 {Comprou && <Compra excluirCarro={excluirCarro} 
                                     carros={carros} 
-                                    addCarro={addCarro} 
                                     id={id} 
-                                    setComprou={setComprou}/>}
+                                    setComprou={setComprou}
+                                    setCarros={setCarros}/>}
             </div>   
         </div>        
 
@@ -50,7 +50,7 @@ CardCarro.propTypes = {
     id:PropTypes.string.isRequired,
     excluirCarro: PropTypes.func.isRequired,
     carros:PropTypes.array.isRequired,
-    addCarro:PropTypes.func.isRequired,
+    setCarros:PropTypes.func.isRequired,
     dono:PropTypes.string,
     cpf:PropTypes.string
 }

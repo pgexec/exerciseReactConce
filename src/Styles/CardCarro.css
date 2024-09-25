@@ -2,8 +2,12 @@
 .divMainCardCarro{
     display: flex;
     position: relative;
+    height: auto;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
+    border-radius: 15px;
     z-index: 0;
 }
 
@@ -13,16 +17,13 @@
     flex-direction: column;
     position: relative;
     background-color: #cccccc79;
-    width: 300px;
+    width:300px;
     height: auto;
     padding: 10px;
     gap: 30px;
     padding: 20px;
     font-weight: 700;
     border-radius: 15px;
-    -webkit-box-shadow: 10px 11px 5px -6px rgba(135,121,135,0.19);
-    -moz-box-shadow: 10px 11px 5px -6px rgba(135,121,135,0.19);
-    box-shadow: 10px 11px 5px -6px rgba(135,121,135,0.19);
     z-index: 0;
     border-radius: 15px;
     border: #cfcfcf solid 2px;
@@ -38,13 +39,9 @@
     height: auto;
     padding: 20px;
     gap: 20px;
-    padding: 20px;
     border-radius: 15px;
     background-color: #cccccc6b;
-    -webkit-box-shadow: 10px 11px 5px -6px rgba(135,121,135,0.19);
-    -moz-box-shadow: 10px 11px 5px -6px rgba(135,121,135,0.19);
-    box-shadow: 10px 11px 5px -6px rgba(135,121,135,0.19);
-    filter: blur(2px);
+    filter: blur(1px);
     pointer-events: none;
     z-index: 0;
 }
@@ -137,6 +134,8 @@
 
 .ConteinerViewCards{
     display: flex;
+    height: auto;
+    width: 100%;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;

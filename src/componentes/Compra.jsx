@@ -8,7 +8,7 @@ function Compra({carros,id,setComprou,addCarro, excluirCarro})
     
     const [Nome,SetNome] = useState("");
     const [Cpf,SetCpf] = useState("");
-
+    const [vendido, setVendido] = useState(false)
     const handleOnchangeNome  = (e) =>{
         SetNome(e.target.value)    
     }
@@ -17,13 +17,14 @@ function Compra({carros,id,setComprou,addCarro, excluirCarro})
         SetCpf(e.target.value)
     }
 
+
     const createCarroVendido = () =>{
 
         const carroAchado = carros.find(carro => carro.id == id)
-        
+        console.log("Objeto ACHADO")
+        console.log(carroAchado)
         if(carroAchado)
         {
-            excluirCarro(id);
             const carroNovo = {
                 ...carroAchado,
                 id:uuidv4(),
@@ -31,9 +32,11 @@ function Compra({carros,id,setComprou,addCarro, excluirCarro})
                 nome:Nome,
                 vendido:true
             };
-            addCarro(carroNovo)
-            console.log(carroNovo);
-           
+            excluirCarro(id)
+            console.log("id que era para ser achado" + id)
+            addCarro(carroNovo); 
+            console.log("id do carro novo" + carroNovo.id)
+            setComprou(false); 
         }else{
             prompt("não foi achado o carro")
         }
@@ -44,7 +47,10 @@ function Compra({carros,id,setComprou,addCarro, excluirCarro})
             <div className='divBotaoFechar' >
                 <button className='BotaoFechar' href="" onClick={()=> setComprou(false)}>fechar</button>
             </div>
-            <p>Confirmação de Compra</p>
+            <div>
+                <p>Preencha seus dados</p>
+                <p>Para continuar a compra</p>
+            </div>
             <div >
                 <label htmlFor="">Nome:</label>
                 <input type="text"  onChange={handleOnchangeNome}/>
@@ -53,7 +59,9 @@ function Compra({carros,id,setComprou,addCarro, excluirCarro})
                 <label htmlFor="">CPF:</label>
                 <input type="text" onChange={handleOnchangeCpf}/>
             </div>
-            <div><button onClick={createCarroVendido} >Confirmar</button></div>
+            <div>z
+                 <button onClick={createCarroVendido}>Comprar</button>
+            </div>
         </div>
     )
 }

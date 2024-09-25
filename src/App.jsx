@@ -12,11 +12,14 @@ function App(){
   const addCarro = (carro) =>{
     setCarros([...carros,carro])
   }
+  
 
   const excluirCarro = (id) =>{
     const result = carros.find(carro => carro.id == id)
     if(result){
-      setCarros(carros.filter(carro => carro.id != id))
+       const novosCarros = carros.filter(carro => carro.id != id)
+       console.log(novosCarros)
+       setCarros(novosCarros)
     }else{
       console.log("erro ao excluir, não foi possivel achar o id do carro");
     }

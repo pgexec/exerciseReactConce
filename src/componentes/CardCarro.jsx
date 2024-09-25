@@ -29,7 +29,11 @@ function CardCarro({carros,id,marca,modelo,cor,ano,imgSrc,excluirCarro, addCarro
             </div> 
 
             <div>
-                {Comprou && <Compra excluirCarro={excluirCarro} carros={carros} addCarro={addCarro} id={id} setComprou={setComprou}/>}
+                {Comprou && <Compra excluirCarro={excluirCarro} 
+                                    carros={carros} 
+                                    addCarro={addCarro} 
+                                    id={id} 
+                                    setComprou={setComprou}/>}
             </div>   
         </div>        
 
@@ -42,13 +46,13 @@ CardCarro.propTypes = {
     modelo: PropTypes.string.isRequired,
     cor: PropTypes.string.isRequired,
     ano: PropTypes.string.isRequired,
-    imgSrc: PropTypes.string.isRequired,
+    imgSrc: PropTypes.string,
     id:PropTypes.string.isRequired,
     excluirCarro: PropTypes.func.isRequired,
     carros:PropTypes.array.isRequired,
     addCarro:PropTypes.func.isRequired,
-    dono:PropTypes.string.isRequired,
-    cpf:PropTypes.string.isRequired
+    dono:PropTypes.string,
+    cpf:PropTypes.string
 }
 
 

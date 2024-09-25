@@ -88,7 +88,6 @@ function FormInputs({createCarro}){
 }
 FormInputs.protoType = {
     createCarro: PropTypes.func.isRequired,
-    
 }
 
 export default FormInputs;
